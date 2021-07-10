@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" >
+<!-- 
+<listeners>
+<listener class-name='TestNGConversion.ListenerExample'/>
+</listeners>
+ -->
+
+  <test thread-count="5" name="Test" verbose="2" >
+  
+  <parameter name="TestOne" value="Chrome"></parameter>
+ 
+  
+  <classes>
+    
+   <!--  <class name="TestNGConversion.CreateTask"/> -->
+     <class name= "TestNGConversion.ClassicEditAccount"/>
+ 
+
+ <!-- <class name= "TestNGConversion.ClassicNewAccount"/> -->
+ </classes>  
+ </test> <!-- Test -->
+  
+</suite>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <class name="TestNGConversion.CreateNewTask"/> Passing data from Excel is done-->
+  <!-- <class name="TestNGConversion.AssignmentCases"/> Passing data from Excel is done-->
+  <!-- <class name="TestNGConversion.CreateNewChart"/> Passing data from Excel is done-->
+  <!-- <class name="TestNGConversion.CreateTask"/>  Passing data from Excel is done -->
+   
+<!-- <class name="TestNGConversion.DeleteTask"/> 
+ <class name="TestNGConversion.EditTask"/>
+  <class name="TestNGConversion.EditTaskinSales"/>
+  <class name="TestNGConversion.Refund"/> -->
+    
