@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -36,6 +37,8 @@ public class BaseClass {
 		if(Name.contains("Chrome")) {
 			
 		WebDriverManager.chromedriver().setup();
+//		ChromeOptions option = new ChromeOptions();
+//		option.addArguments("--disable notifications");
 	
 		driver = new ChromeDriver();	
 		
@@ -61,13 +64,12 @@ public class BaseClass {
     driver.manage().window().maximize();
     wait = new WebDriverWait(driver, 30);
     
-    
+    //wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(""))));
     WebElement Username = driver.findElement(By.id("username"));
 	Username.sendKeys("cypress@testleaf.com");
 	
 	WebElement Password = driver.findElement(By.id("password"));
 	Password.sendKeys("Selbootcamp@123");
-	
 	
 	
 	WebElement Login = driver.findElement(By.id("Login"));
@@ -80,7 +82,7 @@ public class BaseClass {
 	@AfterMethod
 	public void close() {
 		
-		driver.close();
+		//driver.close();
 		System.out.println("After Method executed successfully");
 	}
 	

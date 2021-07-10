@@ -5,15 +5,20 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import PagesofPOM.LoginPageClasses;
 import PagesofPOM.NewViewProfilePage;
 
 public class LoginPages extends BasicReq{
 	
+
+
 	public LoginPages(ChromeDriver driver, Properties prop) {
 		// TODO Auto-generated constructor stub
 		this.driver=driver;
 		this.prop=prop;
+		
 	}
 
 

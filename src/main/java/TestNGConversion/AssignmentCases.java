@@ -1,5 +1,7 @@
 package TestNGConversion;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -7,13 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class AssignmentCases extends BaseClass {
 	
 	
-	@Test
-	public void Assignment() throws InterruptedException {
+	@Test(dataProvider="Assignment")
+	public void Assignment(String AutomationName, String Subname) throws InterruptedException {
 		
 		
 		WebElement Toggle = driver.findElement(By.className("slds-r4"));
@@ -34,7 +37,7 @@ public class AssignmentCases extends BaseClass {
 		//WebElement dropdown = driver.findElement(By.xpath("//div[@class='oneConsoleNav navexConsoleNav']/div[3]/div/button/lightning-primitive-icon"));
 		WebElement dropdown = driver.findElement(By.xpath("//button[@title='Show Navigation Menu']"));
 		dropdown.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		WebElement Home = driver.findElement(By.xpath("//span[text()='Home']"));
 		Home.click();
@@ -95,11 +98,11 @@ public class AssignmentCases extends BaseClass {
 		
 		WebElement Name = driver.findElement(By.xpath("//input[@id='dashboardNameInput']"));
 		Name.click();
-		Name.sendKeys("Madhi_Workout");
+		Name.sendKeys(AutomationName);
 		
 		WebElement Desc = driver.findElement(By.xpath("//input[@id='dashboardDescriptionInput']"));
 		Desc.click();
-		Desc.sendKeys("Testing");
+		Desc.sendKeys(Subname);
 		
 		WebElement Create = driver.findElement(By.xpath("//button[@id='submitBtn']"));
 		Create.click();
@@ -237,4 +240,21 @@ public class AssignmentCases extends BaseClass {
 	 
 	}
 }
+
+
+
+@DataProvider(name="Assignment")
+public String[][] Assignmethod ( ) throws IOException{
+String[][] Data = ExceldataAssignment.ExcelforAssignmentData();
+return Data;
+	
 }
+
+
+
+}
+
+
+
+
+
