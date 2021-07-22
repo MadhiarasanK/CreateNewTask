@@ -35,7 +35,7 @@ public class BasicReq {
 		    driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		    driver.manage().window().maximize();
 		    wait = new WebDriverWait(driver, 30);
-		    
+		    //Tried Branch Version Added
 		    
 		   
 		}
